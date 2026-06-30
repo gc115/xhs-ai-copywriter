@@ -1,0 +1,14 @@
+{
+  "description": "AI小红书文案生成器 - 微信小程序",
+  "packOptions": { "ignore": [] },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.0.0",
+  "appid": "your-appid-here",
+  "projectname": "xhs-copywriter"
+}
