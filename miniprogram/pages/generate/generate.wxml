@@ -1,0 +1,13 @@
+<!-- 生成中页面 -->
+<view class="gen-container">
+  <view class="gen-animation">✍️</view>
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+  </view>
+  <text class="gen-status">{{statusText}}</text>
+  <text class="gen-error" wx:if="{{error}}">{{error}}</text>
+  <view class="gen-actions" wx:if="{{error}}">
+    <button class="btn-outline" bindtap="goBack">返回</button>
+    <button class="btn-primary" bindtap="retry">重试</button>
+  </view>
+</view>
