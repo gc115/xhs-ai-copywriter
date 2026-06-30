@@ -1,0 +1,34 @@
+<!-- 结果页 -->
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <text class="title">✨ 文案生成完成</text>
+    <text class="subtitle">产品：{{product}} | 风格：{{style}}</text>
+  </view>
+
+  <!-- 文案卡片列表 -->
+  <view class="copy-list">
+    <view class="copy-card" wx:for="{{copies}}" wx:key="index">
+      <view class="card-header">
+        <text class="card-num">文案 {{index + 1}}</text>
+        <view class="card-actions">
+          <text class="action-btn" bindtap="copyOne" data-index="{{index}}">📋 复制</text>
+        </view>
+      </view>
+      <view class="card-body">
+        <text class="copy-text" user-select="{{true}}">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作 -->
+  <view class="bottom-bar">
+    <button class="btn-outline" bindtap="copyAll">📋 一键复制全部</button>
+    <button class="btn-primary" bindtap="regenerate">🔄 重新生成</button>
+  </view>
+
+  <!-- 状态 -->
+  <view class="status-footer">
+    <text>今日剩余 {{remaining}} 次 · {{tier === 'pro' ? 'Pro版' : '免费版'}}</text>
+  </view>
+</view>
