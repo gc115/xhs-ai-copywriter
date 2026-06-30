@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/generate/generate",
+    "pages/result/result",
+    "pages/user/user"
+  ],
+  "window": {
+    "navigationBarTitleText": "AI文案生成器",
+    "navigationBarBackgroundColor": "#FF2442",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#FF2442",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "生成",
+        "iconPath": "assets/tab-write.png",
+        "selectedIconPath": "assets/tab-write-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "assets/tab-user.png",
+        "selectedIconPath": "assets/tab-user-active.png"
+      }
+    ]
+  }
+}
