@@ -1,0 +1,80 @@
+<!-- 首页 -->
+<view class="container">
+  <!-- 顶部状态 -->
+  <view class="status-bar">
+    <text class="status-text">
+      今日剩余 <text class="highlight">{{remaining}}</text> 次
+    </text>
+    <text class="pro-link" bindtap="goPro" wx:if="{{tier === 'free'}}">升级Pro →</text>
+    <text class="pro-badge" wx:else>✨ Pro</text>
+  </view>
+
+  <!-- 产品输入 -->
+  <view class="section">
+    <view class="section-title">📝 产品描述</view>
+    <textarea 
+      class="product-input"
+      placeholder="{{productPlaceholder}}"
+      value="{{product}}"
+      bindinput="onProductInput"
+      maxlength="500"
+      auto-height
+    />
+    <view class="char-count">{{product.length}}/500</view>
+  </view>
+
+  <!-- 风格选择 -->
+  <view class="section">
+    <view class="section-title">🎨 文案风格</view>
+    <scroll-view scroll-x class="style-scroll">
+      <view 
+        class="style-card {{styleIndex === index ? 'active' : ''}}"
+        wx:for="{{styles}}"
+        wx:key="id"
+        data-index="{{index}}"
+        bindtap="selectStyle"
+      >
+        <text class="style-icon">{{item.icon || '✨'}}</text>
+        <text class="style-name">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 长度选择 -->
+  <view class="section">
+    <view class="section-title">📏 文案长度</view>
+    <view class="length-row">
+      <view 
+        class="length-card {{lengthIndex === index ? 'active' : ''}}"
+        wx:for="{{lengths}}"
+        wx:key="id"
+        data-index="{{index}}"
+        bindtap="selectLength"
+      >
+        <text class="length-name">{{item.name}}</text>
+        <text class="length-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 生成数量 -->
+  <view class="section">
+    <view class="section-title">🔢 生成数量：<text class="highlight">{{count}}</text> 条</view>
+    <slider 
+      min="1" max="5" value="{{count}}" 
+      bindchange="changeCount"
+      show-value
+      activeColor="#FF2442"
+      block-size="20"
+    />
+  </view>
+
+  <!-- 生成按钮 -->
+  <button 
+    class="generate-btn {{generating ? 'disabled' : ''}}"
+    bindtap="startGenerate"
+    disabled="{{generating}}"
+  >
+    {{generating ? '🚀 生成中...' : '✨ 一键生成文案'}}
+  </button>
+</view>
