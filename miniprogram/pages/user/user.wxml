@@ -1,0 +1,57 @@
+<!-- 用户页 -->
+<view class="container">
+  <view class="user-header">
+    <view class="avatar">🤖</view>
+    <text class="nickname">AI文案助手</text>
+    <text class="tier-badge {{tier}}">{{tier === 'pro' ? '✨ Pro 版' : '免费版'}}</text>
+  </view>
+
+  <!-- 使用统计 -->
+  <view class="stats-card">
+    <view class="stat">
+      <text class="stat-num">{{remaining}}</text>
+      <text class="stat-label">今日剩余</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat">
+      <text class="stat-num">{{used}}</text>
+      <text class="stat-label">今日已用</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat">
+      <text class="stat-num">{{dailyLimit}}</text>
+      <text class="stat-label">每日上限</text>
+    </view>
+  </view>
+
+  <!-- Pro 升级卡片 -->
+  <view class="pro-card" wx:if="{{tier === 'free'}}">
+    <text class="pro-title">🚀 升级 Pro 版</text>
+    <view class="pro-features">
+      <text>✅ 每日无限生成</text>
+      <text>✅ 全部文案风格</text>
+      <text>✅ 优先 AI 响应</text>
+      <text>✅ 专属客服支持</text>
+    </view>
+    <text class="pro-price">¥9.9 / 月</text>
+    <button class="pro-btn" bindtap="goPro">立即升级</button>
+  </view>
+
+  <view class="pro-card pro-active" wx:else>
+    <text class="pro-title">🎉 已是 Pro 版</text>
+    <text class="pro-desc">尽情享受无限生成吧！</text>
+  </view>
+
+  <!-- 近期文案 -->
+  <view class="section">
+    <text class="section-title">📝 历史文案</text>
+    <view class="empty" wx:if="{{history.length === 0}}">
+      <text>暂无历史记录</text>
+      <text class="empty-hint">去生成第一条文案吧~</text>
+    </view>
+    <view class="history-item" wx:for="{{history}}" wx:key="index">
+      <text class="history-title">{{item.product}}</text>
+      <text class="history-time">{{item.time}}</text>
+    </view>
+  </view>
+</view>
