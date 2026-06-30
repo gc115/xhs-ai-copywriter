@@ -1,0 +1,23 @@
+/* 首页样式 */
+.container { padding: 20rpx 30rpx 120rpx; min-height: 100vh; background: #f5f5f5; }
+.status-bar { display: flex; justify-content: space-between; align-items: center; padding: 20rpx; background: #fff; border-radius: 16rpx; margin-bottom: 20rpx; }
+.status-text { font-size: 28rpx; color: #666; }
+.highlight { color: #FF2442; font-weight: bold; }
+.pro-link { font-size: 26rpx; color: #FF2442; }
+.pro-badge { font-size: 24rpx; color: #fff; background: linear-gradient(135deg, #FF2442, #FF6B81); padding: 8rpx 20rpx; border-radius: 20rpx; }
+.section { margin-bottom: 30rpx; }
+.section-title { font-size: 30rpx; font-weight: bold; color: #333; margin-bottom: 16rpx; }
+.product-input { width: 100%; min-height: 200rpx; background: #fff; border-radius: 16rpx; padding: 24rpx; font-size: 28rpx; line-height: 1.6; box-sizing: border-box; }
+.char-count { text-align: right; font-size: 24rpx; color: #999; margin-top: 8rpx; }
+.style-scroll { white-space: nowrap; padding: 10rpx 0; }
+.style-card { display: inline-flex; flex-direction: column; align-items: center; padding: 20rpx 30rpx; margin-right: 16rpx; background: #fff; border-radius: 16rpx; min-width: 140rpx; border: 2rpx solid transparent; }
+.style-card.active { border-color: #FF2442; background: #FFF5F7; }
+.style-icon { font-size: 40rpx; margin-bottom: 8rpx; }
+.style-name { font-size: 24rpx; color: #333; }
+.length-row { display: flex; gap: 16rpx; }
+.length-card { flex: 1; text-align: center; padding: 20rpx; background: #fff; border-radius: 16rpx; border: 2rpx solid transparent; }
+.length-card.active { border-color: #FF2442; background: #FFF5F7; }
+.length-name { display: block; font-size: 28rpx; font-weight: bold; color: #333; }
+.length-desc { font-size: 22rpx; color: #999; margin-top: 4rpx; }
+.generate-btn { width: 100%; height: 100rpx; line-height: 100rpx; background: linear-gradient(135deg, #FF2442, #FF6B81); color: #fff; font-size: 34rpx; font-weight: bold; border-radius: 50rpx; margin-top: 40rpx; border: none; }
+.generate-btn.disabled { opacity: 0.6; }
